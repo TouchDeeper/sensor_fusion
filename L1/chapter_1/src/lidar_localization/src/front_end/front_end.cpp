@@ -9,6 +9,8 @@
 #include <boost/filesystem.hpp>
 #include <pcl/common/transforms.h>
 #include <pcl/io/pcd_io.h>
+#include <lidar_localization/models/registration/ndt_omp_registration.hpp>
+#include <lidar_localization/models/registration/gicp_omp_registration.hpp>
 #include "glog/logging.h"
 
 #include "lidar_localization/global_defination/global_defination.h"
@@ -76,10 +78,17 @@ bool FrontEnd::InitDataPath(const YAML::Node& config_node) {
 bool FrontEnd::InitRegistration(std::shared_ptr<RegistrationInterface>& registration_ptr, const YAML::Node& config_node) {
     std::string registration_method = config_node["registration_method"].as<std::string>();
     LOG(INFO) << "点云匹配方式为：" << registration_method;
-
     if (registration_method == "NDT") {
         registration_ptr = std::make_shared<NDTRegistration>(config_node[registration_method]);
-    } else {
+    } else if(registration_method == "ICP"){
+        registration_ptr = std::make_shared<ICPRegistration>(config_node[registration_method]);
+    } else if(registration_method == "NDTOMP") {
+        registration_ptr = std::make_shared<NDTOMPRegistration>(config_node[registration_method]);
+    } else if(registration_method == "GICP") {
+        registration_ptr = std::make_shared<GICPRegistration>(config_node[registration_method]);
+    } else if(registration_method == "GICPOMP") {
+        registration_ptr = std::make_shared<GICPOMPRegistration>(config_node[registration_method]);
+    } else{
         LOG(ERROR) << "没找到与 " << registration_method << " 相对应的点云匹配方式!";
         return false;
     }
@@ -129,7 +138,7 @@ bool FrontEnd::Update(const CloudData& cloud_data, Eigen::Matrix4f& cloud_pose) 
 
     // 更新相邻两帧的相对运动
     step_pose = last_pose.inverse() * current_frame_.pose;
-    predict_pose = current_frame_.pose * step_pose;
+    predict_pose = current_frame_.pose * step_pose;//suppose the next step is the same as this step
     last_pose = current_frame_.pose;
 
     // 匹配之后根据距离判断是否需要生成新的关键帧，如果需要，则做相应更新
@@ -150,8 +159,8 @@ bool FrontEnd::SetInitPose(const Eigen::Matrix4f& init_pose) {
 
 bool FrontEnd::UpdateWithNewFrame(const Frame& new_key_frame) {
     // 把关键帧点云存储到硬盘里，节省内存
-    std::string file_path = data_path_ + "/key_frames/key_frame_" + std::to_string(global_map_frames_.size()) + ".pcd";
-    pcl::io::savePCDFileBinary(file_path, *new_key_frame.cloud_data.cloud_ptr);
+//    std::string file_path = data_path_ + "/key_frames/key_frame_" + std::to_string(global_map_frames_.size()) + ".pcd";
+//    pcl::io::savePCDFileBinary(file_path, *new_key_frame.cloud_data.cloud_ptr);
 
     Frame key_frame = new_key_frame;
     // 这一步的目的是为了把关键帧的点云保存下来

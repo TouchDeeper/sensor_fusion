@@ -180,7 +180,7 @@ bool FrontEndFlow::PublishData() {
     front_end_ptr_->GetCurrentScan(current_scan_ptr_);
     cloud_pub_ptr_->Publish(current_scan_ptr_);
 
-    if (front_end_ptr_->GetNewLocalMap(local_map_ptr_))
+    if (front_end_ptr_->GetNewLocalMap(local_map_ptr_))//when add new keyframe
         local_map_pub_ptr_->Publish(local_map_ptr_);
 
     return true;

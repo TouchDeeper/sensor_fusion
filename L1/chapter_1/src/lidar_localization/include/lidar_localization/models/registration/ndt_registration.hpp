@@ -8,6 +8,7 @@
 
 #include <pcl/registration/ndt.h>
 #include "lidar_localization/models/registration/registration_interface.hpp"
+#include "lidar_localization/tools/tic_toc.h"
 
 namespace lidar_localization {
 class NDTRegistration: public RegistrationInterface {

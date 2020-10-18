@@ -15,6 +15,8 @@
 
 #include "lidar_localization/sensor_data/cloud_data.hpp"
 #include "lidar_localization/models/registration/ndt_registration.hpp"
+#include "lidar_localization/models/registration/icp_registration.hpp"
+#include "lidar_localization/models/registration/gicp_registration.hpp"
 #include "lidar_localization/models/cloud_filter/voxel_filter.hpp"
 
 namespace lidar_localization {
@@ -36,7 +38,6 @@ class FrontEnd {
     bool GetNewLocalMap(CloudData::CLOUD_PTR& local_map_ptr);
     bool GetNewGlobalMap(CloudData::CLOUD_PTR& global_map_ptr);
     bool GetCurrentScan(CloudData::CLOUD_PTR& current_scan_ptr);
-
   private:
     bool InitParam(const YAML::Node& config_node);
     bool InitDataPath(const YAML::Node& config_node);

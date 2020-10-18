@@ -1,7 +1,7 @@
 data_path: ./   # 数据存放路径
 
 # 匹配
-registration_method: NDT   # 选择点云匹配方法，目前支持：NDT 
+registration_method: ICP   # 选择点云匹配方法，目前支持：NDT ICP NDTOMP GICP
 
 # 局部地图
 key_frame_distance: 2.0 # 关键帧距离
@@ -21,6 +21,35 @@ NDT:
     step_size : 0.1
     trans_eps : 0.01
     max_iter : 30
+
+NDTOMP:
+    res : 1.0
+    step_size : 0.1
+    trans_eps : 0.01
+    max_iter : 30
+    num_threads : 4
+
+ICP:
+    max_distance : 1.5
+    eucli_eps : 0.1
+    trans_eps : 0.01
+    max_iter : 30
+    num_ransac : 30
+
+GICP:
+    max_distance: 1
+    eucli_eps: 0.05
+    trans_eps: 0.01
+    max_iter: 30
+    num_ransac: 30
+    opt_iter: 10
+GICPOMP:
+    max_distance: 1
+    eucli_eps: 0.05
+    trans_eps: 0.01
+    max_iter: 30
+    num_ransac: 30
+    opt_iter: 10
 ## 滤波相关参数
 voxel_filter:
     local_map:

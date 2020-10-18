@@ -9,7 +9,7 @@
 #include <lidar_localization/saveMap.h>
 #include "lidar_localization/global_defination/global_defination.h"
 #include "lidar_localization/front_end/front_end_flow.hpp"
-
+#include "lidar_localization/tools/tic_toc.h"
 using namespace lidar_localization;
 
 std::shared_ptr<FrontEndFlow> _front_end_flow_ptr;
@@ -39,6 +39,5 @@ int main(int argc, char *argv[]) {
 
         rate.sleep();
     }
-
     return 0;
 }

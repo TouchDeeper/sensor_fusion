@@ -8,7 +8,7 @@
 ```asm
 roslaunch lidar_localization test_frame.launch
 cd [bag_path]
-rosbag play rosbag play kitti_2011_10_03_drive_0027_synced.bag
+rosbag play kitti_2011_10_03_drive_0027_synced.bag
 ```
 
 #### 1.这个项目是干嘛的

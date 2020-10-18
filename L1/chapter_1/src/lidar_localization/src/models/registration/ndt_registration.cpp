@@ -53,9 +53,12 @@ bool NDTRegistration::ScanMatch(const CloudData::CLOUD_PTR& input_source,
                                 CloudData::CLOUD_PTR& result_cloud_ptr,
                                 Eigen::Matrix4f& result_pose) {
     ndt_ptr_->setInputSource(input_source);
+    td::TicToc timer;
     ndt_ptr_->align(*result_cloud_ptr, predict_pose);
     result_pose = ndt_ptr_->getFinalTransformation();
-
+    align_time += timer.tos();
+    align_count += 1;
+    align_mean_time();
     return true;
 }
 }
