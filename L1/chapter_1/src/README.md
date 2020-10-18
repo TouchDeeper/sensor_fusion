@@ -4,13 +4,35 @@
 - kitti2bag `sudo pip install kitti2bag`
 
 #### Run guide
-1.Q1:
+1. Q1:
 ```asm
 roslaunch lidar_localization test_frame.launch
 cd [bag_path]
 rosbag play kitti_2011_10_03_drive_0027_synced.bag
 ```
 
+2. Q2:
+
+modify the `registration_method` to `ICP` in `config.yaml`
+```asm
+roslaunch lidar_localization front_end.launch
+cd [bag_path]
+rosbag play kitti_2011_10_03_drive_0027_synced.bag
+```
+
+3. Q3:
+
+modify the `registration_method` to `NDTOMP` in `config.yaml`
+```asm
+roslaunch lidar_localization front_end.launch
+cd [bag_path]
+rosbag play kitti_2011_10_03_drive_0027_synced.bag
+```
+
+
+
+
+===========================================================================================
 #### 1.这个项目是干嘛的
 我正在知乎上写一个从零开始做自动驾驶定位的系列博客，这个工程就是博客的配套源代码。  
 博客专栏地址：https://zhuanlan.zhihu.com/c_1114864226103037952

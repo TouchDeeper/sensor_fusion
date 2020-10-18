@@ -234,18 +234,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lidar_localization/include/lidar_localization/models/registration/pclomp/ndt_omp.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
-              <folding>
-                <element signature="e#1867#1909#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lidar_localization/src/models/registration/gicp_omp_registration.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="189">
@@ -266,11 +254,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lidar_localization/config/front_end/config.yaml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="57">
-              <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+              <caret line="3" column="19" selection-start-line="3" selection-end-line="3" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="417">
+                <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -314,7 +314,6 @@
         <option value="$PROJECT_DIR$/lidar_localization/src/tf_listener/tf_lisener.cpp" />
         <option value="$PROJECT_DIR$/lidar_localization/src/test_frame_node.cpp" />
         <option value="$PROJECT_DIR$/lidar_localization/launch/test_frame.launch" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/lidar_localization/launch/front_end.launch" />
         <option value="$PROJECT_DIR$/lidar_localization/include/lidar_localization/models/registration/icp_registration.hpp" />
         <option value="$PROJECT_DIR$/lidar_localization/src/models/registration/pclomp/ndt_omp.cpp" />
@@ -339,6 +338,7 @@
         <option value="$PROJECT_DIR$/lidar_localization/src/front_end/front_end.cpp" />
         <option value="$PROJECT_DIR$/lidar_localization/include/lidar_localization/models/registration/registration_interface.hpp" />
         <option value="$PROJECT_DIR$/lidar_localization/config/front_end/config.yaml" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -1177,12 +1177,12 @@
       <workItem from="1602895254815" duration="21191000" />
       <workItem from="1602940317543" duration="566000" />
       <workItem from="1602940912549" duration="6734000" />
-      <workItem from="1602984794070" duration="11613000" />
+      <workItem from="1602984794070" duration="12208000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79516000" />
+    <option name="totallyTimeSpent" value="80111000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1195,8 +1195,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="-4" width="1920" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49597424" visible="true" weight="0.15064102" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49597424" visible="true" weight="0.15064102" />
       <window_info id="Structure" order="1" sideWeight="0.50402576" side_tool="true" visible="true" weight="0.15064102" />
       <window_info id="Favorites" order="2" sideWeight="0.5008197" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1207,7 +1208,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32959184" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.36632654" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.36632654" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32959184" />
       <window_info anchor="bottom" id="CMake" order="11" weight="0.36632654" />
@@ -1245,13 +1246,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../devel/include/lidar_localization/saveMap.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lidar_localization/src/tools/file_manager.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-96" />
@@ -1619,7 +1613,17 @@
     <entry file="file://$PROJECT_DIR$/lidar_localization/config/front_end/config.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
-          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+          <caret line="3" column="19" selection-start-line="3" selection-end-line="3" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="417">
+            <caret line="32" column="29" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="29" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
